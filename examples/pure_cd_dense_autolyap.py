@@ -107,8 +107,8 @@ diff_xb1 = [[]] * n
 g_xb1 = [[]] * n
 for i in range(n):
     ATyb1[i] = AT[i](yb1, name='ATyb1_'+str(i))
-    xb1[i], diff_xb1[i], g_xb1[i] = prox(x[i] - tau_[i] * ATyb1[i], g[i], tau_[i],
-                                         name='xb1_'+str(i))
+    xb1[i], diff_xb1[i], g_xb1[i] = prox(x[i] - tau_[i] * ATyb1[i], g[i], tau_[i])
+                                         # , name='xb1_'+str(i))
 
 Axb1_dev = [[]] * n
 for i in range(n):
@@ -147,8 +147,8 @@ yb2 = [[]] * n
 diff_yb2 = [[]] * n
 h_yb2 = [[]] * n
 for j in range(n):
-    yb2[j], diff_yb2[j], h_yb2[j] = prox(y1[j] + sigma_ * Ax1[j], h, sigma_,
-                                         name='yb2_'+str(j))
+    yb2[j], diff_yb2[j], h_yb2[j] = prox(y1[j] + sigma_ * Ax1[j], h, sigma_)
+                                        #, name='yb2_'+str(j))
 
 ATyb2 = [[]] * n
 xb2 = [[]] * n
@@ -161,7 +161,7 @@ for j in range(n):
     g_xb2[j] = [[]] * n
     for i in range(n):
         ATyb2[j][i] = AT[i](yb2[j], name='ATyb2_'+str(j)+'_'+str(i))
-        xb2[j][i], diff_xb2[j][i], g_xb2[j][i] = prox(x1[j][i] - tau_[i] * ATyb2[j][i], g[i], tau_[i], name='xb2_'+str(j)+'_'+str(i))
+        xb2[j][i], diff_xb2[j][i], g_xb2[j][i] = prox(x1[j][i] - tau_[i] * ATyb2[j][i], g[i], tau_[i]) #, name='xb2_'+str(j)+'_'+str(i))
 
 Axb2_dev = [[]] * n
 for j in range(n):
@@ -209,8 +209,8 @@ for j in range(n):
     diff_yb3[j] = [[]] * n
     h_yb3[j] = [[]] * n
     for j2 in range(n):
-        yb3[j][j2], diff_yb3[j][j2], h_yb3[j][j2] = prox(y2[j][j2] + sigma_ * Ax2[j][j2], h, sigma_,
-                                                         name='yb3_'+str(j)+str(j2))
+        yb3[j][j2], diff_yb3[j][j2], h_yb3[j][j2] = prox(y2[j][j2] + sigma_ * Ax2[j][j2], h, sigma_)
+        #, name='yb3_'+str(j)+str(j2))
 
 ATyb3 = [[]] * n
 xb3 = [[]] * n
@@ -228,7 +228,7 @@ for j in range(n):
         g_xb3[j][j2] = [[]] * n
         for i in range(n):
             ATyb3[j][j2][i] = AT[i](yb3[j][j2], name='ATyb3_'+str(j)+str(j2)+'_'+str(i))
-            xb3[j][j2][i], diff_xb3[j][j2][i], g_xb3[j][j2][i] = prox(x2[j][j2][i] - tau_[i] * ATyb3[j][j2][i], g[i], tau_[i], name='xb3_'+str(j)+str(j2)+'_'+str(i))
+            xb3[j][j2][i], diff_xb3[j][j2][i], g_xb3[j][j2][i] = prox(x2[j][j2][i] - tau_[i] * ATyb3[j][j2][i], g[i], tau_[i]) #, name='xb3_'+str(j)+str(j2)+'_'+str(i))
 
 Axb3_dev = [[]] * n
 for j in range(n):
